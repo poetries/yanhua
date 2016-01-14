@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -10,21 +10,20 @@
 	<title>放烟花</title>
 </head>
 <body onselectstart = "return false">
-
 	<canvas id='cas' style="background-color:rgba(0,5,24,1)">浏览器不支持canvas</canvas>
 	<div class="city"><img src="city.png" alt="" /></div>
 	<img src="moon.png" alt="" id="moon" style="visibility: hidden;"/>
 	<div style="display:none">
 		<div class="shape">洁莹新年快乐</div>
-		<div class="shape">祝你们合家幸福</div>
-        <div class="shape">新年快乐</div>
-        <div class="shape">万事如意</div>
+		<div class="shape">合家幸福</div>
+        <div class="shape">健康如意</div>
         <div class="shape">学习进步</div>
-	<div class="shape">洁莹新年快乐</div>
-	<div class="shape">祝你们合家幸福</div>
-        <div class="shape">新年快乐</div>
-        <div class="shape">万事如意</div>
+        <div class="shape">我们在一起</div>
+		<div class="shape">洁莹新年快乐</div>
+		<div class="shape">合家幸福</div>
+        <div class="shape">健康如意</div>
         <div class="shape">学习进步</div>
+        <div class="shape">我们在一起</div>
 	</div>
 	<script>
 		var canvas = document.getElementById("cas");
@@ -277,7 +276,8 @@
 			var imgData = context.getImageData(0,0,canvas.width , canvas.height);
 			context.clearRect(0,0,canvas.width , canvas.height);
 			var dots = [];
-			for(var x=0;x<img				for(var y=0;y<imgData.height;y+=dr){
+			for(var x=0;x<imgData.width;x+=dr){
+				for(var y=0;y<imgData.height;y+=dr){
 					var i = (y*imgData.width + x)*4;
 					if(imgData.data[i+3] > 128){
 						var dot = {x:x , y:y , a:imgData.data[i] , b:imgData.data[i+1] , c:imgData.data[i+2]};
